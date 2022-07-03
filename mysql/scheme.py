@@ -1,13 +1,9 @@
-import sqlalchemy
-import pymysql
+from bd import engine
+
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String
-from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-pymysql.install_as_MySQLdb()
-
-engine = create_engine("mysql+mysqldb://root:1111@localhost/my_first_task")
 Session = sessionmaker(bind=engine)
 session = Session()
 
@@ -28,10 +24,3 @@ class User(Base):
 
 
 session.commit()
-
-mass_query_first = session.query(User).filter(User.name.like('V%')).all()
-mass_query_sod = session.query(User).filter(User.salary < 17000).all()
-
-print(mass_query_sod)
-
-

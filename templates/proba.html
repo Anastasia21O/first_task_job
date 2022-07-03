@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello from Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+</head>
+<body>
+
+<h1>Hello {{ name }}!</h1>
+<h1>Hello World!</h1>
+{% for error in errors %}
+<h4>{{ error }}</h4>
+{% endfor %}
+
+
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Ім'я</th>
+        <th>Фамілія</th>
+        <th>Вік</th>
+        <th>Номер тел</th>
+        <th>Зарплата</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% counter = 0 %}
+    {% for item in mass %}
+    <tr>
+        {% counter = counter + 1 %}
+        <td>{{ counter }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.name }}</td>
+    </tr>
+    {% endfor %}
+    <tr class="active-row">
+        <td>Melissa</td>
+        <td>5150</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
