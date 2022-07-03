@@ -2,22 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello from Flask</title>
+    <title>Task</title>
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
 </head>
 <body>
-
-<h1>Hello {{ name }}!</h1>
-<h1>Hello World!</h1>
-{% for error in errors %}
-<h4>{{ error }}</h4>
-{% endfor %}
-
+<h1 class="var_header">Завдання {{task_number}}</h1>
 
 <table class="styled-table">
     <thead>
     <tr>
-        <th>№</th>
         <th>Ім'я</th>
         <th>Фамілія</th>
         <th>Вік</th>
@@ -26,16 +19,13 @@
     </tr>
     </thead>
     <tbody>
-    {% counter = 0 %}
     {% for item in mass %}
     <tr>
-        {% counter = counter + 1 %}
-        <td>{{ counter }}</td>
         <td>{{ item.name }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.name }}</td>
+        <td>{{ item.sorname }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.phone }}</td>
+        <td>{{ item.salary }}</td>
     </tr>
     {% endfor %}
     <tr class="active-row">

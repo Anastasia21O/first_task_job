@@ -1,4 +1,4 @@
-from bd import engine
+from .bd import engine
 
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String
