@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Task</title>
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
 <h1 class="var_header">Завдання {{task_number}}</h1>
 
-<table class="styled-table">
-    <thead>
+<table class="table table-secondary table-bordered m-2">
+    <thead class="table-dark">
     <tr>
         <th>Ім'я</th>
         <th>Фамілія</th>
@@ -28,12 +29,9 @@
         <td>{{ item.salary }}</td>
     </tr>
     {% endfor %}
-    <tr class="active-row">
-        <td>Melissa</td>
-        <td>5150</td>
-    </tr>
-    </tbody>
 </table>
+
+<a class="btn btn-outline-secondary col-2 m-2" href="/">Повернутися</a>
 
 </body>
 </html>

@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Start</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<a href="/task/1">Завдання 1</a>
-<a href="/task/2">Завдання 2</a>
+<h1 class="var_header">Користувачі</h1>
+<div class="d-flex justify-content-center">
+<table class="table table-secondary table-bordered m-2 ml-2 w-75">
+    <thead class="table-dark">
+    <tr>
+        <th>Ім'я</th>
+        <th>Фамілія</th>
+        <th>Вік</th>
+        <th>Номер тел</th>
+        <th>Зарплата</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in mass %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.sorname }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.phone }}</td>
+        <td>{{ item.salary }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<h3 class="m-2">Завдання:</h3>
+<ul>
+    <li><a class="btn btn-outline-secondary m-2" href="/task/1">Усі користувачі, ім'я яких починається на V</a></li>
+    <li><a class="btn btn-outline-secondary m-2" href="/task/2">Усі користувачі, зарплата яких менша 17000</a></li>
+</ul>
+
+
 </body>
 </html>
