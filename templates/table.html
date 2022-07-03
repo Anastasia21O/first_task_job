@@ -8,30 +8,37 @@
 </head>
 <body>
 <h1 class="var_header">Завдання {{task_number}}</h1>
-
-<table class="table table-secondary table-bordered m-2">
+<div class="d-flex justify-content-center">
+<table class="table table-secondary table-bordered m-2 w-75">
     <thead class="table-dark">
     <tr>
+        <th></th>
         <th>Ім'я</th>
         <th>Фамілія</th>
         <th>Вік</th>
         <th>Номер тел</th>
         <th>Зарплата</th>
+        <th class="w-25"></th>
     </tr>
     </thead>
     <tbody>
     {% for item in mass %}
     <tr>
+        <td></td>
         <td>{{ item.name }}</td>
         <td>{{ item.sorname }}</td>
         <td>{{ item.age }}</td>
         <td>{{ item.phone }}</td>
         <td>{{ item.salary }}</td>
+        <td class="d-flex flex-row justify-content-around">
+            <a class="btn btn-info" href="/update/{{ item.id }}">Змінити</a>
+            <a class="btn btn-danger" href="/delete/{{ item.id }}">Видалити</a>
+        </td>
     </tr>
     {% endfor %}
 </table>
-
-<a class="btn btn-outline-secondary col-2 m-2" href="/">Повернутися</a>
+</div>
+<a class="btn btn-outline-secondary col-2 m-3" href="/">Повернутися</a>
 
 </body>
 </html>

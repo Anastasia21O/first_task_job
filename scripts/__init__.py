@@ -1,4 +1,4 @@
-from .main import mass_query_first, mass_query_sod, mass_query_all
+from .main import task_first, task_sod, select_all, delete_user, add_user, update_user, select_user
 
 def main():
-    return mass_query_first, mass_query_sod, mass_query_all
+    return task_first, task_sod, select_all, delete_user, add_user, update_user, select_user

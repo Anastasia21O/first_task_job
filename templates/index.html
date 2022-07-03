@@ -4,33 +4,42 @@
     <meta charset="UTF-8">
     <title>Start</title>
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
 <h1 class="var_header">Користувачі</h1>
+<a href="/add">Додати</a>
 <div class="d-flex justify-content-center">
-<table class="table table-secondary table-bordered m-2 ml-2 w-75">
-    <thead class="table-dark">
-    <tr>
-        <th>Ім'я</th>
-        <th>Фамілія</th>
-        <th>Вік</th>
-        <th>Номер тел</th>
-        <th>Зарплата</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for item in mass %}
-    <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.sorname }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.phone }}</td>
-        <td>{{ item.salary }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+    <table class="table table-secondary table-bordered m-2 w-75">
+        <thead class="table-dark">
+        <tr>
+            <th>№</th>
+            <th>Ім'я</th>
+            <th>Фамілія</th>
+            <th>Вік</th>
+            <th>Номер тел</th>
+            <th>Зарплата</th>
+            <th class="w-25"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in mass %}
+        <tr>
+            <td></td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.sorname }}</td>
+            <td>{{ item.age }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.salary }}</td>
+            <td class="d-flex flex-row justify-content-around">
+                <a class="btn btn-info" href="/update/{{ item.id }}">Змінити</a>
+                <a class="btn btn-danger" href="/delete/{{ item.id }}">Видалити</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 <h3 class="m-2">Завдання:</h3>
