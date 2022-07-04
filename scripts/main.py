@@ -4,7 +4,7 @@ def task_first():
     mass = session.query(User).filter(User.name.like('V%')).all()
     return mass
 
-def task_sod():
+def task_second():
     return session.query(User).filter(User.salary < 17000).all()
 
 def select_all():
@@ -32,6 +32,15 @@ def update_user(user, id_user):
     add_user(user)
     session.commit()
     select_all()
+
+def numeration():
+    mass = select_all()
+    mass_numeration = []
+    counter = 1
+    for item in mass:
+        mass_numeration.append(counter)
+        counter = counter + 1
+    return mass_numeration
 
 
 

@@ -1,21 +1,21 @@
 from flask import Flask, render_template, request
-from scripts.main import task_first, task_sod, select_all, delete_user, add_user, update_user, select_user
+from scripts.main import task_first, task_second, select_all, delete_user, add_user, update_user, select_user, numeration
 
 app = Flask(__name__)
 app.run(debug=True)
 
 @app.route('/')
 def index():
-    return render_template('index.html', mass=select_all())
+    return render_template('index.html', mass=select_all(), numeration=numeration())
 
 @app.route('/task/<int:number_task>')
 def show_table(number_task):
     mass_query = []
 
     if number_task == 1:
-        mass_query = task_first
+        mass_query = task_first()
     else:
-        mass_query = task_sod
+        mass_query = task_second()
 
     return render_template('table.html', mass=mass_query, task_number=number_task)
 

@@ -8,9 +8,12 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<h1 class="var_header">Користувачі</h1>
-<a href="/add">Додати</a>
-<div class="d-flex justify-content-center">
+<h1 class="text-center">Користувачі</h1>
+
+<div class="d-flex align-items-center flex-column">
+    <div class="d-flex justify-content-end w-75 m-2">
+        <a class="btn btn-primary btn-lg m-2 " href="/add">Додати</a>
+    </div>
     <table class="table table-secondary table-bordered m-2 w-75">
         <thead class="table-dark">
         <tr>
@@ -26,7 +29,7 @@
         <tbody>
         {% for item in mass %}
         <tr>
-            <td></td>
+            <td>{{mass.index(item) + 1}}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.sorname }}</td>
             <td>{{ item.age }}</td>
@@ -48,6 +51,9 @@
     <li><a class="btn btn-outline-secondary m-2" href="/task/2">Усі користувачі, зарплата яких менша 17000</a></li>
 </ul>
 
+<script>
+    text = document.querySelector("#virsta-input-text");
 
+</script>
 </body>
 </html>
