@@ -8,52 +8,54 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<h1 class="text-center">Користувачі</h1>
-
-<div class="d-flex align-items-center flex-column">
-    <div class="d-flex justify-content-end w-75 m-2">
-        <a class="btn btn-primary btn-lg m-2 " href="/add">Додати</a>
+<div class="d-flex flex-row justify-content-between">
+    <div class="card text-white bg-secondary mb-3">
+        <h3 class="card-header text-center m-2">Завдання:</h3>
+        <ul class="card-body">
+            <li><a class="btn btn-secondary m-2" href="/task/1">Усі користувачі, ім'я яких починається на V</a>
+            </li>
+            <li><a class="btn btn-secondary m-2" href="/task/2">Усі користувачі, зарплата яких менша 17000</a>
+            </li>
+        </ul>
     </div>
-    <table class="table table-secondary table-bordered m-2 w-75">
-        <thead class="table-dark">
-        <tr>
-            <th>№</th>
-            <th>Ім'я</th>
-            <th>Фамілія</th>
-            <th>Вік</th>
-            <th>Номер тел</th>
-            <th>Зарплата</th>
-            <th class="w-25"></th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in mass %}
-        <tr>
-            <td>{{mass.index(item) + 1}}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.sorname }}</td>
-            <td>{{ item.age }}</td>
-            <td>{{ item.phone }}</td>
-            <td>{{ item.salary }}</td>
-            <td class="d-flex flex-row justify-content-around">
-                <a class="btn btn-info" href="/update/{{ item.id }}">Змінити</a>
-                <a class="btn btn-danger" href="/delete/{{ item.id }}">Видалити</a>
-            </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="d-flex flex-column col-8">
+        <h1 class="text-center">Користувачі</h1>
+        <div class="d-flex align-items-center flex-column">
+            <div class="d-flex justify-content-end w-100 m-2">
+                <a class="btn btn-primary btn-lg m-2 " href="/add">Додати</a>
+            </div>
+            <table class="table table-secondary table-bordered">
+                <thead class="table-dark">
+                <tr>
+                    <th>№</th>
+                    <th>Ім'я</th>
+                    <th>Фамілія</th>
+                    <th>Вік</th>
+                    <th>Номер тел</th>
+                    <th>Зарплата</th>
+                    <th class="w-25"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in mass %}
+                <tr>
+                    <td>{{mass.index(item) + 1}}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.sorname }}</td>
+                    <td>{{ item.age }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.salary }}</td>
+                    <td class="d-flex flex-row justify-content-around">
+                        <a class="btn btn-info" href="/update/{{ item.id }}">Змінити</a>
+                        <a class="btn btn-danger" href="/delete/{{ item.id }}">Видалити</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div></div>
 </div>
-
-<h3 class="m-2">Завдання:</h3>
-<ul>
-    <li><a class="btn btn-outline-secondary m-2" href="/task/1">Усі користувачі, ім'я яких починається на V</a></li>
-    <li><a class="btn btn-outline-secondary m-2" href="/task/2">Усі користувачі, зарплата яких менша 17000</a></li>
-</ul>
-
-<script>
-    text = document.querySelector("#virsta-input-text");
-
-</script>
 </body>
 </html>

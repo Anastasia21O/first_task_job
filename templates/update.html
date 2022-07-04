@@ -9,38 +9,38 @@
 <body>
 <div>
     <form action="/update/{{user.id}}" method="post">
-        <div>
-            <div>
-                <h3>ЗАПОВНІТЬ ВСІ ПОЛЯ</h3>
-                <div>
-                    <input type="text" id="name"
-                           name="name" value="{{user.name}}">
-                    <label for="name">Ім'я</label>
-                </div>
-                <div>
-                    <input type="text" id="sorname"
-                           name="sorname" value="{{user.sorname}}">
-                    <label for="sorname">Прізвище</label>
-                </div>
-                <div>
-                    <input type="text" id="age"
-                           name="age" value="{{user.age}}">
-                    <label for="age">Вік</label>
-                </div>
-                <div>
-                    <input type="text" id="phone"
-                           name="phone" value="{{user.phone}}">
-                    <label for="phone">Номер телефону</label>
-                </div>
-                <div>
-                    <input type="text" id="salary"
-                           name="salary" value="{{ user.salary }}">
-                    <label for="salary">Зарплата</label>
-                </div>
+        <div class="form-group d-flex justify-content-center">
+            <div class="border border-dark d-flex align-items-center flex-column m-3 w-25 card bg-light mb-3">
+                <h3 class="card-header">ЗАМІНІТЬ ПОТРІБНІ ПОЛЯ</h3>
+                <div class="card-body">
 
-                <button type="submit">
-                    Зберегти
-                </button>
+                    <label for="name">Ім'я</label>
+                    <input class="form-control" type="text" id="name"
+                           name="name" value="{{user.name}}">
+
+                    <label for="sorname" class="mt-2">Прізвище</label>
+                    <input class="form-control" type="text" id="sorname"
+                           name="sorname" value="{{user.sorname}}">
+
+                    <label for="age" class="mt-2">Вік</label>
+                    <input class="form-control" type="text" id="age"
+                           name="age" value="{{user.age}}">
+
+                    <label for="phone" class="mt-2">Номер телефону</label>
+                    <input class="form-control" type="text" id="phone"
+                           name="phone" value="{{user.phone}}">
+
+                    <label for="salary" class="mt-2">Зарплата</label>
+                    <input class="form-control" type="text" id="salary"
+                           name="salary" value="{{ user.salary }}">
+
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <button class="btn btn-primary mb-2 my-3 mx-2" type="submit">
+                            Зберегти
+                        </button>
+                        <a class="btn btn-secondary my-3 mx-2" href="/">Повернутися</a>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
