@@ -1,8 +1,9 @@
 from .bd import engine
 
-from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy import Column, Integer, String, MetaData, Table
+
+meta = MetaData()
 
 Session = sessionmaker(bind=engine)
 session = Session()

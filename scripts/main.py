@@ -1,7 +1,7 @@
 from mysql.scheme import User, session
 
 def task_first():
-    mass = session.query(User).filter(User.name.like('V%')).all()
+    mass = session.query(User).filter(User.name.like('В%')).all()
     return mass
 
 def task_second():

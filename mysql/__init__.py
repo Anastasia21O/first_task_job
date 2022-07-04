@@ -1,4 +1,4 @@
-from .scheme import User, session
+from .scheme import User, session, engine
 
 def scheme():
-    return User, session
+    return User, session, engine
